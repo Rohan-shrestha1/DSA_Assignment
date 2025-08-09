@@ -11,8 +11,10 @@ char pop() {
         return stack[top--];
     }
     return '\0';}
+
 int isMatching(char a, char b) {
-    return (a == '(' && b == ')') || (a == '[' && b == ']') || (a == '{' && b == '}');}
+    return (a == '(' && b == ')') || (a == '[' && b == ']') || (a == '{' && b == '}');
+}
 int isBalanced(char* expr) {
     for (int i = 0; expr[i] != '\0'; i++) {
         if (expr[i] == '(' || expr[i] == '[' || expr[i] == '{') {
@@ -31,7 +33,6 @@ int main() {
         if (isBalanced(expressions[i])) {
             printf("Expression %d is balanced\n", i + 1);
         } else {
-            printf("Expression %d is not balanced\n", i + 1);
-        }
-        top = -1; }
-return 0;}
+            printf("Expression %d is not balanced\n", i + 1);}
+        top = -1;}
+    return 0;}
